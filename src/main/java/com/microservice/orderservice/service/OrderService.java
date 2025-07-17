@@ -16,14 +16,16 @@ public class OrderService {
 		Mono<String> inventoryResponse = webClientBuilder
 				.build()
 				.get()
-				.uri("http://localhost:8081/inventory/check")
+				//.uri("http://localhost:8081/inventory/check")
+				.uri("https://inventory-service-c3mg.onrender.com/inventory/check")
 				.retrieve()
 				.bodyToMono(String.class);
 		
 		Mono<String> paymentResponse = webClientBuilder
 				.build()
 				.get()
-				.uri("http://localhost:8082/payment/initiate")
+				//.uri("http://localhost:8082/payment/initiate")
+				.uri("https://payment-service-oa9c.onrender.com/payment/initiate")
 				.retrieve()
 				.bodyToMono(String.class);
 		
